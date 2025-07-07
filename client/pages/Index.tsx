@@ -741,10 +741,24 @@ function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.05, y: -10 }}
               viewport={{ once: true }}
-              className="card-enhanced rounded-2xl p-8 group cursor-pointer"
+              className="card-enhanced rounded-2xl p-8 group cursor-pointer overflow-hidden relative"
             >
+              {/* 3D Background Element */}
+              <div className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-40 transition-opacity">
+                <Canvas>
+                  <Suspense fallback={null}>
+                    <ambientLight intensity={0.5} />
+                    <pointLight position={[2, 2, 2]} />
+                    <Service3DIcon
+                      geometry={service.geometry}
+                      color={service.geometryColor}
+                    />
+                  </Suspense>
+                </Canvas>
+              </div>
+
               <div
-                className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10`}
               >
                 <service.icon className="h-8 w-8 text-white" />
               </div>
