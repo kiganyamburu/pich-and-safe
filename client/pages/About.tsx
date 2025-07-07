@@ -82,7 +82,7 @@ function AboutHero3D() {
             <Sphere
               position={[
                 Math.cos(angle) * 4,
-                Math.sin(state.clock.elapsedTime * 0.3 + i) * 0.5,
+                Math.sin(i * 0.5) * 0.5,
                 Math.sin(angle) * 4,
               ]}
               args={[0.2]}
