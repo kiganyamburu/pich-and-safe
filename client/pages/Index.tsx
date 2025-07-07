@@ -390,15 +390,21 @@ function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">LINKS</h4>
             <ul className="space-y-2">
-              {["About", "Services", "Products", "Contact"].map((link) => (
-                <li key={link}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ x: 5, color: "#1e90ff" }}
-                    className="text-gray-300 hover:text-[#1e90ff] transition-colors"
-                  >
-                    {link}
-                  </motion.a>
+              {[
+                { name: "About", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Products", path: "/products" },
+                { name: "Contact", path: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-300 hover:text-[#1e90ff] transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
