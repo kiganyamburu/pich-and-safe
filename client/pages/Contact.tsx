@@ -51,7 +51,6 @@ function ContactHero3D() {
   return (
     <group ref={groupRef}>
       <Stars radius={180} depth={90} count={3500} factor={3} />
-      <Environment preset="night" />
 
       {/* Central contact visualization */}
       <Float speed={0.5} rotationIntensity={0.2} floatIntensity={1}>
