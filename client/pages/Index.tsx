@@ -786,10 +786,60 @@ function ServicesSection() {
   );
 }
 
+// 3D CTA Background Component
+function CTA3DBackground() {
+  return (
+    <>
+      <Stars radius={50} depth={30} count={3000} factor={2} />
+      <ambientLight intensity={0.3} />
+      <pointLight position={[5, 5, 5]} intensity={0.8} color="#ffffff" />
+
+      {[...Array(8)].map((_, i) => {
+        const geometries = ["sphere", "box", "torus", "octahedron"];
+        const colors = ["#ffffff", "#f0f9ff", "#e0e7ff", "#fef3c7"];
+        return (
+          <Float
+            key={i}
+            speed={0.5 + Math.random() * 0.5}
+            rotationIntensity={0.5}
+            floatIntensity={2}
+            position={[
+              (Math.random() - 0.5) * 20,
+              (Math.random() - 0.5) * 10,
+              (Math.random() - 0.5) * 10,
+            ]}
+          >
+            <Service3DIcon
+              geometry={geometries[i % geometries.length]}
+              color={colors[i % colors.length]}
+            />
+          </Float>
+        );
+      })}
+
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.2}
+      />
+    </>
+  );
+}
+
 // Enhanced CTA Section
 function CTASection() {
   return (
     <section className="py-20 bg-gradient-rainbow relative overflow-hidden">
+      {/* 3D Background */}
+      <div className="absolute inset-0 opacity-30">
+        <Canvas camera={{ position: [0, 0, 10] }}>
+          <Suspense fallback={null}>
+            <CTA3DBackground />
+          </Suspense>
+        </Canvas>
+      </div>
+
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {[...Array(15)].map((_, i) => (
