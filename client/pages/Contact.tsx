@@ -87,7 +87,7 @@ function ContactHero3D() {
             <Sphere
               position={[
                 Math.cos(angle) * radius,
-                Math.sin(state.clock.elapsedTime * 0.2 + i) * 1,
+                Math.sin(i * 0.3) * 1,
                 Math.sin(angle) * radius,
               ]}
               args={[0.15]}
