@@ -51,7 +51,6 @@ function ProductHero3D() {
   return (
     <group ref={groupRef}>
       <Stars radius={200} depth={100} count={4000} factor={4} />
-      <Environment preset="warehouse" />
 
       {/* Central product showcase */}
       <Float speed={0.8} rotationIntensity={0.2} floatIntensity={1}>
