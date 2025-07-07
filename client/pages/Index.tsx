@@ -7,6 +7,16 @@ import {
   Float,
   Environment,
   PerspectiveCamera,
+  Torus,
+  Octahedron,
+  Icosahedron,
+  Cone,
+  Cylinder,
+  Text,
+  MeshDistortMaterial,
+  MeshWobbleMaterial,
+  Stars,
+  Cloud,
 } from "@react-three/drei";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
