@@ -9,33 +9,74 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    /* Core Brand Colors */
+    --color-primary: 217 91% 60%;
+    --color-primary-light: 217 91% 70%;
+    --color-primary-dark: 217 91% 50%;
+    --color-primary-foreground: 0 0% 100%;
+
+    --color-secondary: 262 83% 70%;
+    --color-secondary-light: 262 83% 80%;
+    --color-secondary-dark: 262 83% 60%;
+    --color-secondary-foreground: 0 0% 100%;
+
+    --color-accent: 38 92% 50%;
+    --color-accent-light: 38 92% 60%;
+    --color-accent-dark: 38 92% 40%;
+    --color-accent-foreground: 0 0% 100%;
+
+    /* State Colors */
+    --color-success: 142 76% 36%;
+    --color-success-light: 142 76% 46%;
+    --color-success-foreground: 0 0% 100%;
+
+    --color-warning: 38 92% 50%;
+    --color-warning-light: 38 92% 60%;
+    --color-warning-foreground: 0 0% 100%;
+
+    --color-error: 0 84% 60%;
+    --color-error-light: 0 84% 70%;
+    --color-error-foreground: 0 0% 100%;
+
+    /* Surface Colors */
+    --color-bg: 0 0% 100%;
+    --color-surface: 0 0% 98%;
+    --color-surface-elevated: 0 0% 100%;
+    --color-surface-hover: 220 14% 96%;
+
+    /* Border & Divider */
+    --color-border: 220 13% 91%;
+    --color-border-subtle: 220 13% 95%;
+    --color-divider: 220 13% 91%;
+
+    /* Text Colors */
+    --color-text-primary: 222 84% 5%;
+    --color-text-secondary: 215 20% 65%;
+    --color-text-muted: 215 16% 47%;
+    --color-text-placeholder: 215 16% 47%;
+    --color-text-disabled: 215 14% 71%;
+    --color-text-inverse: 0 0% 100%;
+
+    /* Legacy mappings for shadcn compatibility */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 222 84% 5%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 222 84% 5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 210 100% 56%;
+    --popover-foreground: 222 84% 5%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 100% 56%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 84% 5%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 38 92% 50%;
     --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 56%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
