@@ -942,10 +942,78 @@ function CTASection() {
   );
 }
 
+// 3D Footer Logo Component
+function Footer3DLogo() {
+  const groupRef = useRef<any>();
+
+  useFrame((state) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y =
+        Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
+      groupRef.current.position.y =
+        Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      <Text
+        position={[0, 0, 0]}
+        fontSize={1}
+        color="#3B82F6"
+        anchorX="center"
+        anchorY="middle"
+        font="/fonts/inter-bold.woff"
+      >
+        P&S
+        <MeshDistortMaterial
+          color="#3B82F6"
+          distort={0.2}
+          speed={2}
+          metalness={0.8}
+          roughness={0.2}
+        />
+      </Text>
+
+      {/* Orbiting elements around logo */}
+      <Float speed={2} rotationIntensity={1} floatIntensity={1}>
+        <Sphere position={[2, 0, 0]} args={[0.1]}>
+          <meshStandardMaterial
+            color="#8B5CF6"
+            emissive="#8B5CF6"
+            emissiveIntensity={0.3}
+          />
+        </Sphere>
+      </Float>
+
+      <Float speed={1.5} rotationIntensity={1} floatIntensity={1}>
+        <Box position={[-2, 0, 0]} args={[0.2, 0.2, 0.2]}>
+          <meshStandardMaterial
+            color="#F59E0B"
+            emissive="#F59E0B"
+            emissiveIntensity={0.3}
+          />
+        </Box>
+      </Float>
+    </group>
+  );
+}
+
 // Enhanced Footer
 function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-black text-white py-16 relative overflow-hidden">
+      {/* 3D Logo Background */}
+      <div className="absolute top-8 right-8 w-32 h-32 opacity-20">
+        <Canvas camera={{ position: [0, 0, 5] }}>
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[2, 2, 2]} color="#3B82F6" />
+            <Footer3DLogo />
+          </Suspense>
+        </Canvas>
+      </div>
+
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_white_1px,_transparent_0)] bg-[size:50px_50px]"></div>
