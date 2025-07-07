@@ -108,6 +108,21 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fadeInUp 0.6s ease-out",
+        "fade-in-left": "fadeInLeft 0.6s ease-out",
+        "fade-in-right": "fadeInRight 0.6s ease-out",
+        "scale-in": "scaleIn 0.4s ease-out",
+        float: "float 6s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite alternate",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "bounce-gentle": "bounceGentle 2s ease-in-out infinite",
+      },
+      transitionTimingFunction: {
+        spring: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
     },
   },
