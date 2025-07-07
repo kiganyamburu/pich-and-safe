@@ -34,6 +34,9 @@ import {
   Download,
   Play,
   Eye,
+  TrendingUp,
+  Palette,
+  Users,
 } from "lucide-react";
 import { useRef, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
