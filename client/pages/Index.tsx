@@ -11,6 +11,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useRef, Suspense } from "react";
+import { Link } from "react-router-dom";
 
 // 3D Scene Components
 function FloatingElements() {
