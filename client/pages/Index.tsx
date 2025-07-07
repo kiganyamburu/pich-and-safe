@@ -222,25 +222,59 @@ function EnhancedScene() {
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 8]} />
       <Environment preset="city" />
-      <ambientLight intensity={0.6} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8B5CF6" />
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+      />
 
+      <ambientLight intensity={0.4} />
+      <pointLight position={[10, 10, 10]} intensity={1.2} color="#3B82F6" />
+      <pointLight position={[-10, -10, -10]} intensity={0.8} color="#8B5CF6" />
+      <pointLight position={[0, 10, -10]} intensity={0.6} color="#F59E0B" />
+
+      {/* Spheres with distortion */}
       <AnimatedSphere position={[-2, 1, 0]} color="#3B82F6" speed={1} />
       <AnimatedSphere position={[2, -1, 0]} color="#8B5CF6" speed={1.5} />
       <AnimatedSphere position={[0, 2, -2]} color="#F59E0B" speed={0.8} />
 
+      {/* Boxes with wobble material */}
       <AnimatedBox position={[-1, -2, 1]} color="#10B981" speed={1.3} />
       <AnimatedBox position={[3, 1, -1]} color="#EF4444" speed={0.9} />
       <AnimatedBox position={[-3, 0, 1]} color="#F59E0B" speed={1.1} />
+
+      {/* New complex geometries */}
+      <AnimatedTorus position={[1, 3, 0]} color="#EC4899" speed={1.2} />
+      <AnimatedTorus position={[-2, -1, 2]} color="#06B6D4" speed={0.9} />
+
+      <AnimatedOctahedron position={[0, -3, 1]} color="#8B5CF6" speed={1.4} />
+      <AnimatedOctahedron position={[4, 0, -2]} color="#F59E0B" speed={1.1} />
+
+      <AnimatedIcosahedron position={[-4, 2, 0]} color="#10B981" speed={0.8} />
+      <AnimatedIcosahedron position={[2, -2, -1]} color="#3B82F6" speed={1.3} />
+
+      <AnimatedCone position={[0, 0, 3]} color="#EF4444" speed={1.5} />
+      <AnimatedCone position={[-3, -3, 0]} color="#8B5CF6" speed={1.0} />
+
+      {/* Floating clouds for atmosphere */}
+      <Cloud
+        position={[-4, -2, -5]}
+        speed={0.2}
+        opacity={0.3}
+        color="#ffffff"
+      />
+      <Cloud position={[4, 2, -5]} speed={0.3} opacity={0.2} color="#e0e7ff" />
 
       <OrbitControls
         enableZoom={false}
         enablePan={false}
         autoRotate
-        autoRotateSpeed={0.5}
-        maxPolarAngle={Math.PI / 1.8}
-        minPolarAngle={Math.PI / 3}
+        autoRotateSpeed={0.3}
+        maxPolarAngle={Math.PI / 1.6}
+        minPolarAngle={Math.PI / 4}
       />
     </>
   );
