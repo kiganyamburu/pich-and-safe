@@ -65,15 +65,20 @@ function Navigation() {
             Pich & Safe
           </motion.div>
           <div className="hidden md:flex space-x-8">
-            {["About", "Services", "Products", "Contact Us"].map((item) => (
-              <motion.a
-                key={item}
-                href="#"
-                whileHover={{ scale: 1.1, color: "#1e90ff" }}
-                className="text-gray-600 hover:text-[#1e90ff] transition-colors font-medium"
-              >
-                {item}
-              </motion.a>
+            {[
+              { name: "About", path: "/about" },
+              { name: "Services", path: "/services" },
+              { name: "Products", path: "/products" },
+              { name: "Contact Us", path: "/contact" },
+            ].map((item) => (
+              <motion.div key={item.name} whileHover={{ scale: 1.1 }}>
+                <Link
+                  to={item.path}
+                  className="text-gray-600 hover:text-[#1e90ff] transition-colors font-medium"
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
             ))}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-[#1e90ff] hover:bg-[#1e90ff]/90 text-white">
