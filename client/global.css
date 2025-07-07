@@ -98,33 +98,74 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Core Brand Colors - Enhanced for dark mode */
+    --color-primary: 217 91% 65%;
+    --color-primary-light: 217 91% 75%;
+    --color-primary-dark: 217 91% 55%;
+    --color-primary-foreground: 222 84% 5%;
+
+    --color-secondary: 262 83% 75%;
+    --color-secondary-light: 262 83% 85%;
+    --color-secondary-dark: 262 83% 65%;
+    --color-secondary-foreground: 222 84% 5%;
+
+    --color-accent: 38 92% 55%;
+    --color-accent-light: 38 92% 65%;
+    --color-accent-dark: 38 92% 45%;
+    --color-accent-foreground: 222 84% 5%;
+
+    /* State Colors */
+    --color-success: 142 76% 46%;
+    --color-success-light: 142 76% 56%;
+    --color-success-foreground: 222 84% 5%;
+
+    --color-warning: 38 92% 55%;
+    --color-warning-light: 38 92% 65%;
+    --color-warning-foreground: 222 84% 5%;
+
+    --color-error: 0 84% 65%;
+    --color-error-light: 0 84% 75%;
+    --color-error-foreground: 0 0% 100%;
+
+    /* Surface Colors */
+    --color-bg: 222 84% 5%;
+    --color-surface: 217 33% 17%;
+    --color-surface-elevated: 217 33% 20%;
+    --color-surface-hover: 217 33% 22%;
+
+    /* Border & Divider */
+    --color-border: 217 33% 22%;
+    --color-border-subtle: 217 33% 20%;
+    --color-divider: 217 33% 22%;
+
+    /* Text Colors */
+    --color-text-primary: 210 40% 98%;
+    --color-text-secondary: 215 20% 65%;
+    --color-text-muted: 215 14% 71%;
+    --color-text-placeholder: 215 14% 71%;
+    --color-text-disabled: 215 16% 47%;
+    --color-text-inverse: 222 84% 5%;
+
+    /* Legacy mappings for shadcn compatibility */
+    --background: 222 84% 5%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 217 33% 17%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 217 33% 17%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 210 100% 56%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 210 100% 56%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 217 91% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
