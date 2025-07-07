@@ -654,6 +654,8 @@ function ServicesSection() {
       description:
         "Data-driven marketing strategies that boost your online presence and drive real business growth.",
       color: "from-purple-500 to-pink-600",
+      geometry: "torus",
+      geometryColor: "#8B5CF6",
     },
     {
       icon: Globe,
@@ -661,6 +663,8 @@ function ServicesSection() {
       description:
         "Scalable, secure cloud infrastructure and hosting solutions for businesses of all sizes.",
       color: "from-orange-500 to-red-600",
+      geometry: "icosahedron",
+      geometryColor: "#F59E0B",
     },
     {
       icon: Shield,
@@ -668,6 +672,8 @@ function ServicesSection() {
       description:
         "Comprehensive security measures to protect your digital assets and sensitive data.",
       color: "from-green-500 to-teal-600",
+      geometry: "octahedron",
+      geometryColor: "#10B981",
     },
     {
       icon: Users,
@@ -675,6 +681,8 @@ function ServicesSection() {
       description:
         "Expert guidance and strategic planning to optimize your technology infrastructure.",
       color: "from-indigo-500 to-blue-600",
+      geometry: "box",
+      geometryColor: "#6366F1",
     },
     {
       icon: Rocket,
@@ -682,6 +690,8 @@ function ServicesSection() {
       description:
         "End-to-end digitalization services to modernize your business processes and operations.",
       color: "from-pink-500 to-rose-600",
+      geometry: "cone",
+      geometryColor: "#EC4899",
     },
   ];
 
