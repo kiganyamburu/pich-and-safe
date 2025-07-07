@@ -50,7 +50,6 @@ function ServiceHero3D() {
   return (
     <group ref={groupRef}>
       <Stars radius={150} depth={80} count={3000} factor={3} />
-      <Environment preset="sunset" />
 
       {/* Central service icon */}
       <Float speed={1} rotationIntensity={0.3} floatIntensity={2}>
