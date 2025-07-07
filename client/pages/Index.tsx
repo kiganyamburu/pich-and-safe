@@ -59,10 +59,12 @@ function AnimatedSphere({ position, color, speed = 1 }: any) {
   return (
     <Float speed={speed} rotationIntensity={0.5} floatIntensity={2}>
       <Sphere ref={meshRef} position={position} args={[0.3, 32, 32]}>
-        <meshStandardMaterial
+        <MeshDistortMaterial
           color={color}
           transparent
           opacity={0.8}
+          distort={0.3}
+          speed={2}
           metalness={0.3}
           roughness={0.2}
         />
@@ -86,14 +88,131 @@ function AnimatedBox({ position, color, speed = 1 }: any) {
   return (
     <Float speed={speed * 1.2} rotationIntensity={1} floatIntensity={3}>
       <Box ref={meshRef} position={position} args={[0.4, 0.4, 0.4]}>
-        <meshStandardMaterial
+        <MeshWobbleMaterial
           color={color}
           transparent
           opacity={0.9}
+          factor={0.6}
+          speed={2}
           metalness={0.5}
           roughness={0.1}
         />
       </Box>
+    </Float>
+  );
+}
+
+function AnimatedTorus({ position, color, speed = 1 }: any) {
+  const meshRef = useRef<any>();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.4;
+      meshRef.current.rotation.y = state.clock.elapsedTime * speed * 0.3;
+      meshRef.current.position.x =
+        position[0] + Math.sin(state.clock.elapsedTime * speed) * 0.3;
+    }
+  });
+
+  return (
+    <Float speed={speed * 0.8} rotationIntensity={2} floatIntensity={1}>
+      <Torus ref={meshRef} position={position} args={[0.3, 0.1, 16, 32]}>
+        <meshStandardMaterial
+          color={color}
+          transparent
+          opacity={0.7}
+          metalness={0.8}
+          roughness={0.2}
+          emissive={color}
+          emissiveIntensity={0.2}
+        />
+      </Torus>
+    </Float>
+  );
+}
+
+function AnimatedOctahedron({ position, color, speed = 1 }: any) {
+  const meshRef = useRef<any>();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.5;
+      meshRef.current.rotation.z = state.clock.elapsedTime * speed * 0.3;
+      meshRef.current.scale.setScalar(
+        1 + Math.sin(state.clock.elapsedTime * speed * 2) * 0.1,
+      );
+    }
+  });
+
+  return (
+    <Float speed={speed * 1.5} rotationIntensity={1.5} floatIntensity={2}>
+      <Octahedron ref={meshRef} position={position} args={[0.4]}>
+        <MeshDistortMaterial
+          color={color}
+          transparent
+          opacity={0.8}
+          distort={0.5}
+          speed={3}
+          metalness={0.7}
+          roughness={0.1}
+        />
+      </Octahedron>
+    </Float>
+  );
+}
+
+function AnimatedIcosahedron({ position, color, speed = 1 }: any) {
+  const meshRef = useRef<any>();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y = state.clock.elapsedTime * speed * 0.4;
+      meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.2;
+      meshRef.current.position.z =
+        position[2] + Math.cos(state.clock.elapsedTime * speed) * 0.2;
+    }
+  });
+
+  return (
+    <Float speed={speed * 0.7} rotationIntensity={0.8} floatIntensity={1.5}>
+      <Icosahedron ref={meshRef} position={position} args={[0.35]}>
+        <meshStandardMaterial
+          color={color}
+          transparent
+          opacity={0.9}
+          metalness={0.9}
+          roughness={0.1}
+          wireframe={false}
+        />
+      </Icosahedron>
+    </Float>
+  );
+}
+
+function AnimatedCone({ position, color, speed = 1 }: any) {
+  const meshRef = useRef<any>();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.z = state.clock.elapsedTime * speed * 0.6;
+      meshRef.current.position.y =
+        position[1] + Math.sin(state.clock.elapsedTime * speed * 1.5) * 0.4;
+    }
+  });
+
+  return (
+    <Float speed={speed * 1.3} rotationIntensity={1.2} floatIntensity={3}>
+      <Cone ref={meshRef} position={position} args={[0.2, 0.6, 8]}>
+        <MeshWobbleMaterial
+          color={color}
+          transparent
+          opacity={0.8}
+          factor={0.4}
+          speed={2}
+          metalness={0.6}
+          roughness={0.3}
+        />
+      </Cone>
     </Float>
   );
 }
