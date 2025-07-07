@@ -581,6 +581,61 @@ function HeroSection() {
   );
 }
 
+// 3D Service Card Component
+function Service3DIcon({ geometry = "sphere", color = "#3B82F6" }: any) {
+  const meshRef = useRef<any>();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.5;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2;
+    }
+  });
+
+  const GeometryComponent =
+    {
+      sphere: Sphere,
+      box: Box,
+      torus: Torus,
+      octahedron: Octahedron,
+      icosahedron: Icosahedron,
+      cone: Cone,
+    }[geometry] || Sphere;
+
+  const getArgs = () => {
+    switch (geometry) {
+      case "sphere":
+        return [0.5, 32, 32];
+      case "box":
+        return [0.8, 0.8, 0.8];
+      case "torus":
+        return [0.4, 0.15, 16, 32];
+      case "octahedron":
+        return [0.6];
+      case "icosahedron":
+        return [0.5];
+      case "cone":
+        return [0.3, 0.8, 8];
+      default:
+        return [0.5, 32, 32];
+    }
+  };
+
+  return (
+    <GeometryComponent ref={meshRef} args={getArgs()}>
+      <MeshDistortMaterial
+        color={color}
+        distort={0.3}
+        speed={2}
+        metalness={0.8}
+        roughness={0.2}
+        emissive={color}
+        emissiveIntensity={0.1}
+      />
+    </GeometryComponent>
+  );
+}
+
 // Enhanced Services Section
 function ServicesSection() {
   const services = [
@@ -590,6 +645,8 @@ function ServicesSection() {
       description:
         "Modern, responsive websites built with cutting-edge technologies and stunning visual design.",
       color: "from-blue-500 to-purple-600",
+      geometry: "sphere",
+      geometryColor: "#3B82F6",
     },
     {
       icon: TrendingUp,
