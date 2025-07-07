@@ -46,7 +46,6 @@ function AboutHero3D() {
   return (
     <group ref={groupRef}>
       <Stars radius={100} depth={50} count={2000} factor={2} />
-      <Environment preset="city" />
 
       {/* Central floating text */}
       <Float speed={1} rotationIntensity={0.5} floatIntensity={2}>
