@@ -452,10 +452,7 @@ function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-xl text-text-secondary font-medium max-w-2xl leading-relaxed"
             >
-              Pich & Safe Consultancy Ltd is a Kenyan-based ICT solutions
-              company dedicated to transforming businesses through innovative
-              technology and strategic digital solutions that drive real
-              results.
+              Pich & Safe Consultancy Ltd is a Kenyan-based ICT solutions company offering expert services in software development, networking, hardware support, and digital transformation.
             </motion.p>
 
             <motion.div
