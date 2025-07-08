@@ -1042,7 +1042,7 @@ function Footer() {
                 className="flex items-center space-x-3"
               >
                 <MapPin className="h-5 w-5 text-brand-primary" />
-                <span>Nairobi, Kenya</span>
+                <span>Kenya,Tharaka-Nithi,Chogoria.</span>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
