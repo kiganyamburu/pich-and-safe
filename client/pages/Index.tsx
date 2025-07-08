@@ -1184,7 +1184,7 @@ function Footer() {
         >
           <p className="text-gray-400 text-sm">
             Copyright © {new Date().getFullYear()} Pich & Safe. All rights
-            reserved. | Designed with ❤️ for the future.
+            reserved.
           </p>
         </motion.div>
       </div>
