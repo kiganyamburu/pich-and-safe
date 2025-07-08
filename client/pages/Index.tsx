@@ -721,11 +721,10 @@ function ServicesSection() {
           </motion.div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gradient-primary mb-6">
-            Comprehensive ICT Solutions
+            Services
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            From web development to digital transformation, we provide
-            end-to-end technology solutions that drive business success.
+            We are deeply committed to the growth and success of our clients.
           </p>
         </motion.div>
 
