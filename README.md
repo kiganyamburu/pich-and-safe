@@ -389,7 +389,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - **Website**: [pichsafe.com](https://pichsafe.com)
 - **Email**: info@pichsafe.com
-- **Location**: Nairobi, Kenya
+- **Location**: kenya chuka chogoria
 
 ---
 
