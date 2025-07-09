@@ -430,7 +430,7 @@ function HeroSection() {
             >
               <Zap className="h-4 w-4 text-brand-accent mr-2" />
               <span className="text-sm font-medium text-text-secondary">
-                Powering Digital Innovation
+                Walk in the Path of Service
               </span>
             </motion.div>
 
@@ -665,27 +665,27 @@ function ServicesSection() {
     },
     {
       icon: Shield,
-      title: "Cybersecurity Solutions",
+      title: "General IT Consultations",
       description:
-        "Comprehensive security measures to protect your digital assets and sensitive data.",
+        "We provide consulting services for technology implementation and upgrades. Our team delivers tailored solutions to meet your business needs.",
       color: "from-green-500 to-teal-600",
       geometry: "octahedron",
       geometryColor: "#10B981",
     },
     {
       icon: Users,
-      title: "IT Consulting",
+      title: "Enterprise Resource Planning (ERP)",
       description:
-        "Expert guidance and strategic planning to optimize your technology infrastructure.",
+        "We offer ERP solutions that bring all your business processes into one easy-to-use system. This helps you stay organized, save time, and make better decisions every day.",
       color: "from-indigo-500 to-blue-600",
       geometry: "box",
       geometryColor: "#6366F1",
     },
     {
       icon: Rocket,
-      title: "Digital Transformation",
+      title: "AI Automation",
       description:
-        "End-to-end digitalization services to modernize your business processes and operations.",
+        "We help businesses save time and work faster by using smart tools that handle repetitive tasks. Our AI automation service is simple, safe, and designed to make everyday work easier.",
       color: "from-pink-500 to-rose-600",
       geometry: "cone",
       geometryColor: "#EC4899",
