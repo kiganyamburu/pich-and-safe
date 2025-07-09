@@ -640,25 +640,25 @@ function ServicesSection() {
       icon: Code,
       title: "Web Development & Design",
       description:
-        "Modern, responsive websites built with cutting-edge technologies and stunning visual design.",
+        "We provide scalable end-to-end application development and management solutions. Our expertise includes healthcare, business, travel, accounting, and school systems.",
       color: "from-blue-500 to-purple-600",
       geometry: "sphere",
       geometryColor: "#3B82F6",
     },
     {
       icon: TrendingUp,
-      title: "Digital Marketing Solutions",
+      title: "Social Media and Digital Marketing",
       description:
-        "Data-driven marketing strategies that boost your online presence and drive real business growth.",
+        "We offer social media management, graphic design, and advertising services. Additionally, we develop custom social media applications tailored to your needs.",
       color: "from-purple-500 to-pink-600",
       geometry: "torus",
       geometryColor: "#8B5CF6",
     },
     {
       icon: Globe,
-      title: "Cloud & Hosting Services",
+      title: "Network Services",
       description:
-        "Scalable, secure cloud infrastructure and hosting solutions for businesses of all sizes.",
+        "Pich and Safe delivers reliable network solutions including cabling, CCTV, access control, and wireless setups—built for security and performance..",
       color: "from-orange-500 to-red-600",
       geometry: "icosahedron",
       geometryColor: "#F59E0B",
