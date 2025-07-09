@@ -356,7 +356,7 @@ function ServicesGridSection() {
     },
     {
       icon: TrendingUp,
-      title: "Digital Marketing",
+      title: "Social Media and Digital Marketing",
       description:
         "Comprehensive digital marketing strategies to boost your online presence and drive conversions.",
       features: [
@@ -370,7 +370,7 @@ function ServicesGridSection() {
     },
     {
       icon: Globe,
-      title: "Cloud Solutions",
+      title: "General IT Consultations",
       description:
         "Scalable cloud infrastructure and migration services for modern, efficient business operations.",
       features: [
@@ -384,7 +384,7 @@ function ServicesGridSection() {
     },
     {
       icon: Shield,
-      title: "Cybersecurity",
+      title: "Network Services",
       description:
         "Advanced security measures to protect your digital assets and ensure business continuity.",
       features: [
@@ -398,7 +398,7 @@ function ServicesGridSection() {
     },
     {
       icon: Smartphone,
-      title: "Mobile Development",
+      title: "Enterprise Resource Planning (ERP)",
       description:
         "Native and cross-platform mobile applications for iOS and Android devices.",
       features: [
@@ -412,7 +412,7 @@ function ServicesGridSection() {
     },
     {
       icon: Database,
-      title: "Data Solutions",
+      title: "AI Automation",
       description:
         "Database design, data analytics, and business intelligence solutions for informed decision-making.",
       features: [
