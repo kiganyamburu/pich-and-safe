@@ -636,23 +636,23 @@ function SocialMediaSection() {
     {
       icon: Facebook,
       name: "Facebook",
-      handle: "@pichsafe",
+      handle: "Pich Safe",
       color: "#1877F2",
       link: "#",
     },
     {
       icon: Instagram,
       name: "Instagram",
-      handle: "@pichsafe",
+      handle: "@pich&safe",
       color: "#E4405F",
-      link: "#",
+      link: "https://www.instagram.com/pichsafe?igsh=YzljYTk1ODg3Zg==",
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      handle: "Pich & Safe",
+      handle: "Pich Safe.",
       color: "#0A66C2",
-      link: "#",
+      link: "https://www.linkedin.com/in/pich-safe-b0671b296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       icon: Twitter,
