@@ -390,7 +390,6 @@ function HeroSection() {
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full"
             style={{
               width: Math.random() * 6 + 2 + "px",
               height: Math.random() * 6 + 2 + "px",
@@ -408,7 +407,7 @@ function HeroSection() {
               ease: "easeInOut",
               delay: Math.random() * 2,
             }}
-            className="bg-gradient-to-r from-brand-primary to-brand-secondary"
+            className="bg-gradient-to-r from-brand-primary to-brand-secondary absolute rounded-full"
           />
         ))}
       </div>
@@ -1045,7 +1044,7 @@ function Footer() {
                 className="flex items-center space-x-3"
               >
                 <Phone className="h-5 w-5 text-brand-primary" />
-                <span>+254 700 000 000</span>
+                <span>079-409-384</span>
               </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}

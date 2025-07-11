@@ -619,32 +619,32 @@ function ProductCategoriesSection() {
   const categories = [
     {
       icon: Monitor,
-      title: "Web Development",
+      title: "Enterprise/Business Solutions",
       count: "50+ Websites Built",
       description:
-        "Custom websites, e-commerce platforms, and web applications",
+        "We offer a wide range of scalable and customizable solutions, including Revenue Collection Systems (RCS), Enterprise Resource Planning (ERP), Order Management Systems, Payroll Solutions, Bulk & Corporate Messaging Platforms, School Management Solutions, Microfinance Management Solutions, Point of Sale Systems, and Hospital Management Systems.",
       color: "#3B82F6",
     },
     {
       icon: TrendingUp,
-      title: "Digital Marketing",
+      title: "Hospital/Health Solutions",
       count: "30+ Campaigns",
-      description: "Social media marketing, content creation, and advertising",
+      description: "We provide a comprehensive Hospital Management System designed to streamline operations across all departments. Our solution includes Pharmacy, Clinical, Accounting, and Consultancy modules, as well as specialized support for Morgue management and other departments such as Laboratory, Radiology, and more.",
       color: "#8B5CF6",
     },
     {
       icon: Cloud,
-      title: "Hosting & Domains",
+      title: "Internet and Network Solutions",
       count: "100+ Domains Managed",
-      description: "Domain registration, web hosting, and SSL certificates",
+      description: "Pich and Safe is a leading provider of innovative network solutions tailored to businesses and institutions across Kenya. We specialize in structured cabling, CCTV installation, access control, and seamless wireless connectivity to ensure secure, high-performance digital environments. Trust us to build the backbone of your network with reliability and speed.",
       color: "#10B981",
     },
     {
       icon: Users,
-      title: "ICT Consulting",
+      title: "Hospitality and Event Management System Solutions",
       count: "25+ Businesses Advised",
       description:
-        "Technology strategy, digital transformation, and IT planning",
+        "We offer tailored digital solutions for the hospitality industry, including a comprehensive Hotel Management System, an efficient Hotel Online Booking System, and user-friendly online event venue booking platforms—designed to streamline operations and enhance guest experiences.",
       color: "#F59E0B",
     },
     {

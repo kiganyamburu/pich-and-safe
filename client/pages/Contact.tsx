@@ -36,6 +36,7 @@ import {
 } from "lucide-react";
 import { useRef, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm, ValidationError } from "@formspree/react";
 
 // 3D Contact Scene Components
 function ContactHero3D() {
@@ -308,10 +309,10 @@ function ContactMethodsSection() {
     {
       icon: Phone,
       title: "Call Us",
-      value: "+254 700 000 000",
+      value: "079-409-3840",
       description: "Mon-Fri from 8am to 6pm EAT",
       color: "#3B82F6",
-      action: "tel:+254700000000",
+      action: "tel:079-409-3840",
     },
     {
       icon: Mail,
@@ -440,14 +441,10 @@ function ContactMethodsSection() {
 }
 
 // Contact Form Section
+
+
 function ContactFormSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    message: "",
-  });
+  const [state, handleSubmit] = useForm("xpwrvykn");
 
   const services = [
     "Web Development",
@@ -459,23 +456,6 @@ function ContactFormSection() {
     "Other",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <section className="py-20 bg-gradient-rainbow relative overflow-hidden">
       {/* 3D Background */}
@@ -484,7 +464,6 @@ function ContactFormSection() {
           <Suspense fallback={null}>
             <Stars radius={100} depth={50} count={2000} />
             <ambientLight intensity={0.4} />
-
             {[...Array(8)].map((_, i) => (
               <Float
                 key={i}
@@ -531,125 +510,121 @@ function ContactFormSection() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="glass rounded-3xl p-8 border border-white/20"
-        >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
-                  placeholder="Your full name"
-                />
+        {state.succeeded ? (
+          <div className="text-center text-white text-xl font-semibold">
+            Thank you! Your message has been sent.
+          </div>
+        ) : (
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="glass rounded-3xl p-8 border border-white/20"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                    placeholder="Your full name"
+                  />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                    placeholder="your@email.com"
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                    placeholder="Your company name"
+                  />
+                </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
-                  placeholder="Your company name"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-2">
-                  Service Interest
-                </label>
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
-                >
-                  <option value="" className="text-gray-900">
-                    Select a service
-                  </option>
-                  {services.map((service) => (
-                    <option
-                      key={service}
-                      value={service}
-                      className="text-gray-900"
-                    >
-                      {service}
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">
+                    Service Interest
+                  </label>
+                  <select
+                    name="service"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent"
+                  >
+                    <option value="" className="text-gray-900">
+                      Select a service
                     </option>
-                  ))}
-                </select>
+                    {services.map((service) => (
+                      <option key={service} value={service} className="text-gray-900">
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div>
-              <label className="block text-sm font-medium text-white mb-2">
-                Message *
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent resize-none"
-                placeholder="Tell us about your project..."
-              />
-            </div>
+              <div>
+                <label className="block text-sm font-medium text-white mb-2">
+                  Message *
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent resize-none"
+                  placeholder="Tell us about your project..."
+                />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
+              </div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-center"
-            >
-              <Button
-                type="submit"
-                size="lg"
-                className="bg-white text-brand-primary hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold group"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-center"
               >
-                <Send className="mr-2 h-5 w-5" />
-                Send Message
-                <motion.div
-                  className="ml-2"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={state.submitting}
+                  className="bg-white text-brand-primary hover:bg-gray-100 rounded-full px-8 py-4 text-lg font-semibold group"
                 >
-                  <Zap className="h-5 w-5" />
-                </motion.div>
-              </Button>
-            </motion.div>
-          </form>
-        </motion.div>
+                  <Send className="mr-2 h-5 w-5" />
+                  {state.submitting ? "Sending..." : "Send Message"}
+                  <motion.div
+                    className="ml-2"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Zap className="h-5 w-5" />
+                  </motion.div>
+                </Button>
+              </motion.div>
+            </form>
+          </motion.div>
+        )}
       </div>
     </section>
   );
