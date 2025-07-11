@@ -647,21 +647,21 @@ function ProductCategoriesSection() {
         "We offer tailored digital solutions for the hospitality industry, including a comprehensive Hotel Management System, an efficient Hotel Online Booking System, and user-friendly online event venue booking platforms—designed to streamline operations and enhance guest experiences.",
       color: "#F59E0B",
     },
-    {
-      icon: Palette,
-      title: "Graphics Design",
-      count: "200+ Designs Created",
-      description:
-        "Logo design, branding, marketing materials, and visual content",
-      color: "#EF4444",
-    },
-    {
-      icon: Shield,
-      title: "IT Support",
-      count: "24/7 Support Available",
-      description: "Technical support, system maintenance, and troubleshooting",
-      color: "#EC4899",
-    },
+    // {
+    //   icon: Palette,
+    //   title: "Graphics Design",
+    //   count: "200+ Designs Created",
+    //   description:
+    //     "Logo design, branding, marketing materials, and visual content",
+    //   color: "#EF4444",
+    // },
+    // {
+    //   icon: Shield,
+    //   title: "IT Support",
+    //   count: "24/7 Support Available",
+    //   description: "Technical support, system maintenance, and troubleshooting",
+    //   color: "#EC4899",
+    // },
   ];
 
   return (

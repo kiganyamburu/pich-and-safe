@@ -822,6 +822,54 @@ function CTA3DBackground() {
   );
 }
 
+// Trust and Transform Section
+function TrustTransformSection() {
+  return (
+    <section className="py-20 bg-surface relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_hsl(var(--color-primary))_1px,_transparent_0)] bg-[size:40px_40px]"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 gap-12"
+        >
+          {/* We Build Trust */}
+          <div className="flex flex-col items-start">
+            <div className="mb-6">
+              <Shield className="h-10 w-10 text-brand-primary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <span className="text-brand-primary">We Build</span> Trust
+            </h3>
+            <p className="text-text-secondary leading-relaxed">
+              With our expertise in software development and cybersecurity, we build trust with our clients through transparent, secure solutions. We ensure every solution meets the highest standards of security and reliability.
+            </p>
+          </div>
+
+          {/* We Transform */}
+          <div className="flex flex-col items-start">
+            <div className="mb-6">
+              <Code className="h-10 w-10 text-brand-primary" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <span className="text-brand-primary">We</span> Transform
+            </h3>
+            <p className="text-text-secondary leading-relaxed">
+              Our approach focuses on delivering solutions that transform your business processes. From ideation to execution, we integrate the latest technologies to streamline workflows and drive growth.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+
 // Enhanced CTA Section
 function CTASection() {
   return (
@@ -1194,6 +1242,7 @@ export default function Index() {
       <Navigation />
       <HeroSection />
       <ServicesSection />
+      <TrustTransformSection />
       <CTASection />
       <Footer />
     </div>
