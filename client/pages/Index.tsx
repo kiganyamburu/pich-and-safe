@@ -1184,7 +1184,7 @@ function Footer() {
             </p>
             <div className="flex space-x-4">
               <motion.a
-                href="#"
+                href="https://www.instagram.com/pichsafe?igsh=YzljYTk1ODg3Zg=="
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-white hover:shadow-lg transition-all duration-300"
@@ -1192,7 +1192,7 @@ function Footer() {
                 <Instagram className="h-5 w-5" />
               </motion.a>
               <motion.a
-                href="#"
+                href=""
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full text-white hover:shadow-lg transition-all duration-300"
