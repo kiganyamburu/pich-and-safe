@@ -1150,10 +1150,13 @@ function Footer() {
               {[
                 "Web Development",
                 "Digital Marketing",
-                "Cloud Solutions",
-                "Mobile Development",
-                "Cybersecurity",
-                "IT Consulting",
+                "AI Automation",
+                "Network Setup & Maintenance",
+                "Network Services",
+                "General IT Consultations",
+                "Domain and Hosting Services",
+                "Database Development",
+                "Managed Services/Business Process Outsourcing",
               ].map((service) => (
                 <li key={service}>
                   <motion.a
