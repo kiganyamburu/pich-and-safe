@@ -428,7 +428,7 @@ function HeroSection() {
               className="inline-flex items-center px-4 py-2 rounded-full glass border border-brand-primary/20"
             >
               <Zap className="h-4 w-4 text-brand-accent mr-2" />
-              <span className="text-sm font-medium text-text-secondary">
+              <span className="text-sm font-medium text-text-secondary text-black">
                 Walk in the Path of Service
               </span>
             </motion.div>
@@ -449,7 +449,7 @@ function HeroSection() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-xl text-text-secondary font-medium max-w-2xl leading-relaxed"
+              className="text-xl dark:text-text-secondary text-black font-medium max-w-2xl leading-relaxed"
             >
               Pich & Safe Consultancy Ltd is a Kenyan-based ICT solutions company offering expert services in software development, networking, hardware support, and digital transformation.
             </motion.p>

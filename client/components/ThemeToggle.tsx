@@ -1,65 +1,45 @@
-import { motion } from "framer-motion";
-import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  // Default to 'light' instead of 'dark'
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+    return "light";
+  });
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    const initialTheme =
-      (stored as "light" | "dark") || (prefersDark ? "dark" : "light");
+    const root = window.document.documentElement;
 
-    setTheme(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
-  }, []);
+    // Remove both classes first
+    root.classList.remove("light", "dark");
+
+    // Add the current theme class
+    root.classList.add(theme);
+
+    // Save to localStorage
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
-    <motion.button
+    <Button
+      variant="ghost"
+      size="sm"
       onClick={toggleTheme}
-      className="relative p-2 rounded-full glass hover:glass-dark transition-all duration-300"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      aria-label="Toggle theme"
+      className="h-9 w-9 rounded-full"
     >
-      <motion.div
-        initial={false}
-        animate={{
-          rotate: theme === "dark" ? 180 : 0,
-          scale: theme === "dark" ? 0 : 1,
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="absolute inset-2"
-      >
-        <Sun className="h-full w-full text-yellow-500" />
-      </motion.div>
-
-      <motion.div
-        initial={false}
-        animate={{
-          rotate: theme === "light" ? -180 : 0,
-          scale: theme === "light" ? 0 : 1,
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="absolute inset-2"
-      >
-        <Moon className="h-full w-full text-blue-400" />
-      </motion.div>
-
-      {/* Invisible element to maintain button size */}
-      <div className="h-6 w-6 opacity-0">
-        <Sun className="h-full w-full" />
-      </div>
-    </motion.button>
+      {theme === "light" ? (
+        <Moon className="h-4 w-4" />
+      ) : (
+        <Sun className="h-4 w-4" />
+      )}
+    </Button>
   );
 }

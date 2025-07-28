@@ -325,7 +325,7 @@ function ContactMethodsSection() {
     {
       icon: MapPin,
       title: "Visit Us",
-      value: "Nairobi, Kenya",
+      value: "Chuka, Chogoria",
       description: "Our office location",
       color: "#F59E0B",
       action: "#",
@@ -333,7 +333,7 @@ function ContactMethodsSection() {
     {
       icon: Clock,
       title: "Working Hours",
-      value: "8:00 AM - 6:00 PM",
+      value: "8:00 AM - 5:00 PM",
       description: "Monday to Friday (EAT)",
       color: "#8B5CF6",
       action: "#",
@@ -444,7 +444,7 @@ function ContactMethodsSection() {
 
 
 function ContactFormSection() {
-  const [state, handleSubmit] = useForm("xpwrvykn");
+  const [state, handleSubmit] = useForm("xldlnjwz");
 
   const services = [
     "Web Development",

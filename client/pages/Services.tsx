@@ -306,7 +306,7 @@ function ServicesHeroSection() {
             className="inline-flex items-center px-6 py-3 rounded-full glass border border-brand-secondary/20"
           >
             <Zap className="h-5 w-5 text-brand-accent mr-2" />
-            <span className="text-sm font-medium text-text-secondary">
+            <span className="text-sm font-medium text-text-secondary text-black">
               Our Professional Services
             </span>
           </motion.div>
