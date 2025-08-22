@@ -1080,20 +1080,20 @@ function Footer() {
               strategic digital transformation.
             </p>
             <div className="space-y-3 text-gray-300">
-              <motion.div
+              {/* <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-3"
               >
                 <MapPin className="h-5 w-5 text-brand-primary" />
                 <span>Kenya,Tharaka-Nithi,Chogoria.</span>
-              </motion.div>
-              <motion.div
+              </motion.div> */}
+              {/* <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-3"
               >
                 <Phone className="h-5 w-5 text-brand-primary" />
                 <span>079-409-384</span>
-              </motion.div>
+              </motion.div> */}
               <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-3"
