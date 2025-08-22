@@ -1087,13 +1087,13 @@ function Footer() {
                 <MapPin className="h-5 w-5 text-brand-primary" />
                 <span>Kenya,Tharaka-Nithi,Chogoria.</span>
               </motion.div> */}
-              {/* <motion.div
+              <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-3"
               >
                 <Phone className="h-5 w-5 text-brand-primary" />
-                <span>079-409-384</span>
-              </motion.div> */}
+                <span>0794-093-840</span>
+              </motion.div>
               <motion.div
                 whileHover={{ x: 5 }}
                 className="flex items-center space-x-3"
